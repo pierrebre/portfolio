@@ -1,3 +1,45 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-display: swap;
+    font-family: 'Tinos', sans-serif;
+    font-style: regular;
+    font-weight: 400;
+    src: url('$lib/assets/fonts/Tinos-Regular.woff2')
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Tinos', sans-serif;
+    font-style: bold;
+    font-weight: 700;
+    src: url('$lib/assets/fonts/Tinos-Bold.woff2')
+}
+
+
+p {
+    font-family: 'Tinos', sans-serif;
+    font-weight: 400;
+    font-size: 28px;
+}
+
+span {
+    font-family: 'Tinos', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+
+a {
+    font-family: 'Tinos', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.texte {
+    font-family: 'Tinos', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
