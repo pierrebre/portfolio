@@ -4,7 +4,7 @@
 </script>
 
 <div class="container mx-auto px-4 mt-4">
-	<nav class="flex justify-between align-baseline">
+	<nav class="flex lg:flex-row flex-col justify-between align-baseline">
 		<p class="text-xl font-bold">Pierre Barbé</p>
 		<ul class="flex">
 			<li><a class="mr-8" href="/#">About Me</a></li>
