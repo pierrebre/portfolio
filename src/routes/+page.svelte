@@ -2,6 +2,8 @@
 	import '../app.css';
 	import { Download, Github, Linkedin } from 'lucide-svelte';
 	import { Button } from "$lib/components/ui/button";
+	import { Separator } from "$lib/components/ui/separator";
+
 </script>
 
 <div class="container mx-auto px-4 mt-4">
@@ -37,12 +39,14 @@
 			</p>
 		</div>
 		<div class="flex mt-16">
-			<a  href="/" class="mr-8 border-solid border-2 border-black p-4 rounded hover:bg-black">
+			<a  href="/" class="mr-8 border-solid border-2 border-black p-2 rounded hover:bg-black">
 				<Github class='h-4 w-4' />
 			</a>
-			<a href="/" class="mr-8 border-solid border-2 border-black p-4 rounded">
+			<a href="/" class="mr-8 border-solid border-2 border-black p-2 rounded">
 				<Linkedin class='h-4 w-4' />
 			</a>
+			
 		</div>
+		<Separator class="my-4" />
 	</section>
 </div>
