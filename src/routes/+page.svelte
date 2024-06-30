@@ -3,8 +3,54 @@
 	import { Download, Github, Linkedin } from 'lucide-svelte';
 	import { Button } from "$lib/components/ui/button";
 	import { Separator } from "$lib/components/ui/separator";
+	import * as Card from "$lib/components/ui/card";
+ 
+	const skills = [
+		{
+		 title: "Git",
+		 content:"lorem"
+		},
+		{
+			title: "Typescript",
+			content: "lorem"
+		},
+		{
+			title: "Javasript",
+			content: "lorem"
+		},
+		{
+			title: "Svelte",
+			content: "lorem"
+		},
+		{
+			title: "Tailwind",
+			content: "lorem"
+		},
+		{
+			title: "HTML",
+			content: "lorem",
+		}
+	];
 
+	const experiences = [
+		{
+			title: "Web Developer",
+			description: "24/10/2021 - Present",
+			content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae."
+		},
+		{
+			title: "Web Developer",
+			description: "24/10/2021 - Present",
+			content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae."
+		},
+		{
+			title: "Web Developer",
+			description: "24/10/2021 - Present",
+			content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae."	
+		}
+	];
 </script>
+
 
 <div class="container mx-auto px-4 mt-4">
 	<nav class="flex lg:flex-row flex-col justify-between align-baseline">
@@ -39,14 +85,48 @@
 			</p>
 		</div>
 		<div class="flex mt-16">
-			<a  href="/" class="mr-8 border-solid border-2 border-black p-2 rounded hover:bg-black">
+			<a  href="/" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black">
 				<Github class='h-4 w-4' />
 			</a>
-			<a href="/" class="mr-8 border-solid border-2 border-black p-2 rounded">
+			<a href="/" class="mr-8 border-solid border-2 border-black p-3 rounded">
 				<Linkedin class='h-4 w-4' />
 			</a>
-			
+			<Separator class="" />
 		</div>
-		<Separator class="my-4" />
 	</section>
+	<section class="mt-16 text-center">
+		<h2 class="">My <span>Skills</span></h2>
+		<ul class="mt-8 flex lg:flex-row lg:flex-wrap flex-col justify-between align-baseline">
+			{#each skills as skill}
+				<li class="mb-8">
+					<Card.Root class="w-[350px]">
+						<Card.Header>
+							<Card.Title>{skill.title}</Card.Title>
+						</Card.Header>
+						<Card.Content>
+							<p>{skill.content}</p>
+						</Card.Content>
+					</Card.Root>
+				</li>
+			{/each}
+		</ul>
+	</section>
+</div>
+<div class="w-full bg-black text-white">
+    <div class="container mx-auto px-4">
+        <section class="py-16">
+            <h2 class="text-center">My <span>Experience</span></h2>
+			{#each experiences as experience}
+				<Card.Root class="mt-8">
+					<Card.Header>
+						<Card.Title>{experience.title}</Card.Title>
+						<Card.Description>{experience.description}</Card.Description>
+					</Card.Header>
+					<Card.Content>
+						<p class="texte">{experience.content}</p>
+					</Card.Content>
+				</Card.Root>
+			{/each}
+        </section>
+    </div>
 </div>
