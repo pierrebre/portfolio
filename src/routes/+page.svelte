@@ -1,72 +1,77 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import { Download, Github, Linkedin } from 'lucide-svelte';
-	import { Button } from "$lib/components/ui/button";
-	import { Separator } from "$lib/components/ui/separator";
-	import * as Card from "$lib/components/ui/card";
- 
+	import { Button } from '$lib/components/ui/button';
+	import { Separator } from '$lib/components/ui/separator';
+	import * as Card from '$lib/components/ui/card';
+	import type { PageData } from './$types';
+	import ContactForm from './contact/contact-form.svelte';
+	export let data: PageData;
+
 	const skills = [
 		{
-		 title: "Git",
-		 content:"lorem"
+			title: 'Git',
+			content: 'lorem'
 		},
 		{
-			title: "Typescript",
-			content: "lorem"
+			title: 'Typescript',
+			content: 'lorem'
 		},
 		{
-			title: "Javasript",
-			content: "lorem"
+			title: 'Javasript',
+			content: 'lorem'
 		},
 		{
-			title: "Svelte",
-			content: "lorem"
+			title: 'Svelte',
+			content: 'lorem'
 		},
 		{
-			title: "Tailwind",
-			content: "lorem"
+			title: 'Tailwind',
+			content: 'lorem'
 		},
 		{
-			title: "HTML",
-			content: "lorem",
+			title: 'HTML',
+			content: 'lorem'
 		}
 	];
 
 	const experiences = [
 		{
-			title: "Web Developer",
-			description: "24/10/2021 - Present",
-			content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae."
+			title: 'Web Developer',
+			description: '24/10/2021 - Present',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae.'
 		},
 		{
-			title: "Web Developer",
-			description: "24/10/2021 - Present",
-			content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae."
+			title: 'Web Developer',
+			description: '24/10/2021 - Present',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae.'
 		},
 		{
-			title: "Web Developer",
-			description: "24/10/2021 - Present",
-			content: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae."	
+			title: 'Web Developer',
+			description: '24/10/2021 - Present',
+			content:
+				'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae.'
 		}
 	];
 </script>
 
-
 <div class="container mx-auto px-4 mt-4">
 	<nav class="flex lg:flex-row flex-col justify-between align-baseline">
 		<p class="text-xl font-bold">Pierre Barbé</p>
-			<ul class="flex lg:flex-row flex-col my-4">
-				<li><a class="mr-8" href="/#">About Me</a></li>
-				<li><a class="mr-8" href="/#">Skills</a></li>
-				<li><a class="mr-8" href="/#">Projects</a></li>
-				<li><a class="mr-8" href="/#">Contact Me</a></li>
-			</ul>
-			<div>
-				<Button>
-					<Download class="mr-2 h-4 w-4" />
-					Resume
-				</Button>
-			</div>
+		<ul class="flex lg:flex-row flex-col my-4">
+			<li><a class="mr-8" href="/#">About Me</a></li>
+			<li><a class="mr-8" href="/#">Skills</a></li>
+			<li><a class="mr-8" href="/#">Projects</a></li>
+			<li><a class="mr-8" href="/#">Contact Me</a></li>
+		</ul>
+		<div>
+			<Button>
+				<Download class="mr-2 h-4 w-4" />
+				Resume
+			</Button>
+		</div>
 	</nav>
 	<section class="mt-16">
 		<div>
@@ -85,11 +90,11 @@
 			</p>
 		</div>
 		<div class="flex mt-16">
-			<a  href="/" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black">
-				<Github class='h-4 w-4' />
+			<a href="/" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black">
+				<Github class="h-4 w-4" />
 			</a>
 			<a href="/" class="mr-8 border-solid border-2 border-black p-3 rounded">
-				<Linkedin class='h-4 w-4' />
+				<Linkedin class="h-4 w-4" />
 			</a>
 			<Separator class="" />
 		</div>
@@ -113,9 +118,9 @@
 	</section>
 </div>
 <div class="w-full bg-black text-white">
-    <div class="container mx-auto px-4">
-        <section class="py-16">
-            <h2 class="text-center">My <span>Experience</span></h2>
+	<div class="container mx-auto px-4">
+		<section class="py-16">
+			<h2 class="text-center">My <span>Experience</span></h2>
 			{#each experiences as experience}
 				<Card.Root class="mt-8">
 					<Card.Header>
@@ -127,6 +132,21 @@
 					</Card.Content>
 				</Card.Root>
 			{/each}
-        </section>
-    </div>
+		</section>
+	</div>
+</div>
+<div>
+	<div class="container mx-auto px-4 mt-4">
+		<section class="py-16">
+			<div class="flex lg:flex-row flex-col justify-between items-center">
+				<ContactForm {data} class="basis-2/4" />
+				<p class="flex flex-col justify-between items-start">
+					Let's talk for more informations
+					<span class="texte">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, neque!</span>
+					<span>pierre.barbe@gmail.com</span>
+					<span>+1 (613) 555-5555</span>
+				</p>
+			</div>
+		</section>
+	</div>
 </div>
