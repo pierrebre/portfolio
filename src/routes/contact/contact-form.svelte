@@ -1,6 +1,7 @@
 <script lang="ts">
     import * as Form from "$lib/components/ui/form";
     import { Input } from "$lib/components/ui/input";
+    import { Textarea } from "$lib/components/ui/textarea";
     import { formSchema, type FormSchema } from "./schema";
     import {
       type SuperValidated,
@@ -38,10 +39,11 @@
     <Form.Field {form} name="message">
       <Form.Control let:attrs>
         <Form.Label>Message</Form.Label>
-        <Input {...attrs} bind:value={$formData.message} placeholder="Your message" />
+        <Textarea {...attrs} bind:value={$formData.message} placeholder="Your message" />
       </Form.Control>
       <Form.Description>Your message to us.</Form.Description>
       <Form.FieldErrors />
     </Form.Field>
     <Form.Button>Submit</Form.Button>
+    
   </form>
