@@ -1,12 +1,14 @@
 <script lang="ts">
 	import '../app.css';
-	import { Download, Github, Linkedin } from 'lucide-svelte';
+	import { Download, Github, Linkedin, Mail, Phone, AlignJustify, X } from 'lucide-svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
 	import * as Card from '$lib/components/ui/card';
 	import type { PageData } from './$types';
 	import ContactForm from './contact/contact-form.svelte';
 	export let data: PageData;
+
+	let isVisible = false;
 
 	const skills = [
 		{
@@ -58,15 +60,24 @@
 </script>
 
 <div class="container mx-auto px-4 mt-4">
-	<nav class="flex lg:flex-row flex-col justify-between align-baseline">
-		<p class="text-xl font-bold">Pierre Barbé</p>
-		<ul class="flex lg:flex-row flex-col my-4">
+	<nav class="flex lg:flex-row flex-col justify-between align-baseline lg:items-center">
+		<div class="flex flex-raw justify-between">
+			<p class="text-xl font-bold">Pierre Barbé</p>
+			<Button on:click={() => (isVisible = !isVisible)} class="flex lg:hidden">
+				{#if isVisible}
+					<X class="h-4 w-4" />
+				{:else}
+					<AlignJustify class="h-4 w-4" />
+				{/if}
+			</Button>
+		</div>
+		<ul class="flex lg:flex-row flex-col my-4 {isVisible ? 'flex ' : 'hidden lg:flex'}">
 			<li><a class="mr-8" href="/#">About Me</a></li>
 			<li><a class="mr-8" href="/#">Skills</a></li>
 			<li><a class="mr-8" href="/#">Projects</a></li>
 			<li><a class="mr-8" href="/#">Contact Me</a></li>
 		</ul>
-		<div>
+		<div class={isVisible ? 'flex' : 'hidden lg:flex'}>
 			<Button>
 				<Download class="mr-2 h-4 w-4" />
 				Resume
@@ -140,13 +151,30 @@
 		<section class="py-16">
 			<div class="flex lg:flex-row flex-col justify-between items-center">
 				<ContactForm {data} class="basis-2/4" />
-				<p class="flex flex-col justify-between items-start">
+				<p class="flex flex-col justify-between items-start mt-8 lg:mt-0">
 					Let's talk for more informations
-					<span class="texte">Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, neque!</span>
-					<span>pierre.barbe@gmail.com</span>
-					<span>+1 (613) 555-5555</span>
+					<span class="texte"
+						>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, neque!</span
+					>
+					<span class="flex flex-raw items-center"><Mail class="mr-2" />pierre.barbe@gmail.com</span
+					>
+					<span class="flex flex-raw items-center"><Phone class="mr-2" />+33 (0) 1 23 45 67 89</span
+					>
+					<span class="flex flex-raw mt-4">
+						<a href="/" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black">
+							<Github class="h-4 w-4" />
+						</a>
+						<a href="/" class="mr-8 border-solid border-2 border-black p-3 rounded">
+							<Linkedin class="h-4 w-4" />
+						</a>
+					</span>
 				</p>
 			</div>
 		</section>
 	</div>
+</div>
+<div class="bg-black text-white">
+	<footer class="container mx-auto px-4 mt-4 py-6 text-right">
+		<p>Made with ❤️ by Pierre Barbé</p>
+	</footer>
 </div>
