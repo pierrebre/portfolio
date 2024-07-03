@@ -5,15 +5,15 @@
 	import { Separator } from '$lib/components/ui/separator';
 	import * as Card from '$lib/components/ui/card';
 	import type { PageData } from './$types';
-	import ContactForm from './contact/contact-form.svelte';
+	import ContactForm from './contact/contact-form.svelte';	
 	export let data: PageData;
-
+	
 	let isVisible = false;
 
 	const skills = [
 		{
 			title: 'Git',
-			content: 'lorem'
+			content: './git.svg'
 		},
 		{
 			title: 'Typescript',
@@ -59,10 +59,10 @@
 	];
 </script>
 
-<div class="container mx-auto px-4 mt-4">
+<div class="container mx-auto mt-4">
 	<nav class="flex lg:flex-row flex-col justify-between align-baseline lg:items-center">
 		<div class="flex flex-raw justify-between">
-			<p class="text-xl font-bold">Pierre Barbé</p>
+			<p class="text-2xl font-bold">Pierre Barbé</p>
 			<Button on:click={() => (isVisible = !isVisible)} class="flex lg:hidden">
 				{#if isVisible}
 					<X class="h-4 w-4" />
@@ -72,10 +72,30 @@
 			</Button>
 		</div>
 		<ul class="flex lg:flex-row flex-col my-4 {isVisible ? 'flex ' : 'hidden lg:flex'}">
-			<li><a class="mr-8" href="/#">About Me</a></li>
-			<li><a class="mr-8" href="/#">Skills</a></li>
-			<li><a class="mr-8" href="/#">Projects</a></li>
-			<li><a class="mr-8" href="/#">Contact Me</a></li>
+			<li>
+				<a
+					class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+					href="/#experience">About Me</a
+				>
+			</li>
+			<li>
+				<a
+					class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+					href="/#skills">Skills</a
+				>
+			</li>
+			<li>
+				<a
+					class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+					href="/#projects">Projects</a
+				>
+			</li>
+			<li>
+				<a
+					class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
+					href="/#contact">Contact Me</a
+				>
+			</li>
 		</ul>
 		<div class={isVisible ? 'flex' : 'hidden lg:flex'}>
 			<Button>
@@ -86,41 +106,47 @@
 	</nav>
 	<section class="mt-16">
 		<div>
-			<p>
-				Hello I'am <span>Pierre BARBÉ.</span><br />
-				<span>Web</span> Developper<br />
-				Based In <span>Montreal.</span>
+			<p class="text-4xl">
+				Hello I'am <span class="font-bold">Pierre BARBÉ.</span><br />
+				<span class="font-bold">Web</span> Developper<br />
+				Based In <span class="font-bold">Montreal.</span>
 			</p>
 		</div>
 		<div class="mt-8">
-			<p class="texte text-[#8e8b8c]">
+			<p class="texte text-[#8e8b8c] lg:w-2/5">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur
 				consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet
 				consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum
 				explicabo nesciunt nam in incidunt vitae.
 			</p>
 		</div>
-		<div class="flex mt-16">
-			<a href="/" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black">
-				<Github class="h-4 w-4" />
+		<div class="flex mt-16 items-end">
+			<a
+				href="/"
+				class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500"
+			>
+				<Github class="h-5 w-5" />
 			</a>
-			<a href="/" class="mr-8 border-solid border-2 border-black p-3 rounded">
-				<Linkedin class="h-4 w-4" />
+			<a
+				href="/"
+				class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500"
+			>
+				<Linkedin class="h-5 w-5" />
 			</a>
 			<Separator class="" />
 		</div>
 	</section>
-	<section class="mt-16 text-center">
-		<h2 class="">My <span>Skills</span></h2>
-		<ul class="mt-8 flex lg:flex-row lg:flex-wrap flex-col justify-between align-baseline">
+	<section id="skills" class="mt-16 text-center">
+		<h2 class="text-3xl">My <span class="font-bold">Skills</span></h2>
+		<ul class="mt-8 flex lg:flex-row lg:flex-wrap flex-col justify-between align-baseline items-center">
 			{#each skills as skill}
-				<li class="mb-8">
-					<Card.Root class="w-[350px]">
+				<li class="mb-8 w-[250px]">
+					<Card.Root class="">
 						<Card.Header>
 							<Card.Title>{skill.title}</Card.Title>
 						</Card.Header>
-						<Card.Content>
-							<p>{skill.content}</p>
+						<Card.Content class="flex justify-center items-center">
+							<img src={skill.content} alt="skill" class="h-12 w-12" />
 						</Card.Content>
 					</Card.Root>
 				</li>
@@ -130,16 +156,18 @@
 </div>
 <div class="w-full bg-black text-white">
 	<div class="container mx-auto px-4">
-		<section class="py-16">
-			<h2 class="text-center">My <span>Experience</span></h2>
+		<section id="experience" class="py-16">
+			<h2 class="text-center text-3xl">My <span>Experience</span></h2>
 			{#each experiences as experience}
-				<Card.Root class="mt-8">
+				<Card.Root
+					class="mt-8 border-zinc-600 bg-black text-white hover:bg-zinc-800 ease-linear duration-300"
+				>
 					<Card.Header>
 						<Card.Title>{experience.title}</Card.Title>
-						<Card.Description>{experience.description}</Card.Description>
+						<Card.Description class="text-whiteC">{experience.description}</Card.Description>
 					</Card.Header>
 					<Card.Content>
-						<p class="texte">{experience.content}</p>
+						<p class="text-zinc-300">{experience.content}</p>
 					</Card.Content>
 				</Card.Root>
 			{/each}
@@ -148,27 +176,37 @@
 </div>
 <div>
 	<div class="container mx-auto px-4 mt-4">
-		<section class="py-16">
+		<section id="contact" class="py-16">
 			<div class="flex lg:flex-row flex-col justify-between items-center">
 				<ContactForm {data} class="basis-2/4" />
-				<p class="flex flex-col justify-between items-start mt-8 lg:mt-0">
-					Let's talk for more informations
-					<span class="texte"
+				<div
+					class="flex flex-col text-center items-center justify-between lg:items-start mt-16 lg:mt-0"
+				>
+					<h4 class="text-2xl font-bold">Let's talk for more informations</h4>
+					<span class="texte mt-2"
 						>Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, neque!</span
 					>
-					<span class="flex flex-raw items-center"><Mail class="mr-2" />pierre.barbe@gmail.com</span
+					<span class="flex flex-raw items-center mt-2"
+						><Mail class="mr-2" />pierre.barbe@gmail.com</span
 					>
-					<span class="flex flex-raw items-center"><Phone class="mr-2" />+33 (0) 1 23 45 67 89</span
+					<span class="flex flex-raw items-center mt-2"
+						><Phone class="mr-2" />+33 (0) 1 23 45 67 89</span
 					>
 					<span class="flex flex-raw mt-4">
-						<a href="/" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black">
-							<Github class="h-4 w-4" />
+						<a
+							href="/"
+							class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500"
+						>
+							<Github class="h-5 w-5" />
 						</a>
-						<a href="/" class="mr-8 border-solid border-2 border-black p-3 rounded">
-							<Linkedin class="h-4 w-4" />
+						<a
+							href="/"
+							class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500"
+						>
+							<Linkedin class="h-5 w-5" />
 						</a>
 					</span>
-				</p>
+				</div>
 			</div>
 		</section>
 	</div>
