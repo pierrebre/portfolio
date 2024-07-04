@@ -19,7 +19,7 @@
     const { form: formData, enhance } = form;
 </script>
 
-  <form method="POST" use:enhance class="basis-2/4">
+  <form method="POST" use:enhance action="/contact" class="basis-2/4">
     <Form.Field {form} name="name">
       <Form.Control let:attrs>
         <Form.Label>Name</Form.Label>
