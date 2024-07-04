@@ -5,35 +5,43 @@
 	import { Separator } from '$lib/components/ui/separator';
 	import * as Card from '$lib/components/ui/card';
 	import type { PageData } from './$types';
-	import ContactForm from './contact/contact-form.svelte';	
+	import ContactForm from './contact/contact-form.svelte';
 	export let data: PageData;
-	
+
 	let isVisible = false;
 
 	const skills = [
+		{
+			title: 'Linux',
+			content: './linux.svg'
+		},
 		{
 			title: 'Git',
 			content: './git.svg'
 		},
 		{
+			title: 'Node.js',
+			content: './nodedotjs.svg'
+		},
+		{
 			title: 'Typescript',
-			content: 'lorem'
+			content: './typescript.svg'
 		},
 		{
-			title: 'Javasript',
-			content: 'lorem'
+			title: 'PHP',
+			content: './php.svg'
 		},
 		{
-			title: 'Svelte',
-			content: 'lorem'
+			title: 'Wordpress',
+			content: './wordpress.svg'
 		},
 		{
-			title: 'Tailwind',
-			content: 'lorem'
+			title: 'React',
+			content: './react.svg'
 		},
 		{
-			title: 'HTML',
-			content: 'lorem'
+			title: 'Tailwind CSS',
+			content: './tailwindcss.svg'
 		}
 	];
 
@@ -75,19 +83,13 @@
 			<li>
 				<a
 					class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
-					href="/#experience">About Me</a
-				>
-			</li>
-			<li>
-				<a
-					class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
 					href="/#skills">Skills</a
 				>
 			</li>
 			<li>
 				<a
 					class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left"
-					href="/#projects">Projects</a
+					href="/#experience">Experience</a
 				>
 			</li>
 			<li>
@@ -137,11 +139,13 @@
 		</div>
 	</section>
 	<section id="skills" class="mt-16 text-center">
-		<h2 class="text-3xl">My <span class="font-bold">Skills</span></h2>
-		<ul class="mt-8 flex lg:flex-row lg:flex-wrap flex-col justify-between align-baseline items-center">
+		<h2 class="text-3xl mb-8">My <span class="font-bold">Skills</span></h2>
+		<ul class="grid gap-4 lg:grid-cols-5 align-baseline justify-center items-center">
 			{#each skills as skill}
 				<li class="mb-8 w-[250px]">
-					<Card.Root class="">
+					<Card.Root
+						class="custom-shadow hover:shadow-lg hover:scale-155 ease-linear duration-300 hover:cursor-pointer"
+					>
 						<Card.Header>
 							<Card.Title>{skill.title}</Card.Title>
 						</Card.Header>
@@ -154,7 +158,7 @@
 		</ul>
 	</section>
 </div>
-<div class="w-full bg-black text-white">
+<div class="w-full bg-black text-white mt-16">
 	<div class="container mx-auto px-4">
 		<section id="experience" class="py-16">
 			<h2 class="text-center text-3xl">My <span>Experience</span></h2>
@@ -178,7 +182,7 @@
 	<div class="container mx-auto px-4 mt-4">
 		<section id="contact" class="py-16">
 			<div class="flex lg:flex-row flex-col justify-between items-center">
-				<ContactForm {data} class="basis-2/4" />
+				<ContactForm {data} class="basis-2/4 mt-8" />
 				<div
 					class="flex flex-col text-center items-center justify-between lg:items-start mt-16 lg:mt-0"
 				>
