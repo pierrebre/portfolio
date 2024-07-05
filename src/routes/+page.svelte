@@ -49,7 +49,7 @@
 	<section class="mt-16">
 		<div>
 			<p class="text-4xl">
-				Hello I'am <span class="font-bold">Pierre BARBÉ.</span>
+				Hello I'am<br class="lg:hidden" /> <span class="font-bold">Pierre BARBÉ.</span>
 				<br />
 				<span class="font-bold">Web</span> Developer
 				<br />
@@ -119,9 +119,9 @@
 	<section id="contact" class="py-16">
 		<div class="flex lg:flex-row flex-col justify-between items-center">
 			<ContactForm {data} class="lg:basis-2/4 mt-8" />
-			<div class="flex flex-col text-center lg:text-left items-center lg:items-start mt-16 lg:mt-0">
+			<div class="flex flex-col text-left items-start  lg:w-auto w-[85%] mt-16 lg:mt-0"> 
 				<h4 class="text-2xl font-bold">Let's talk for more informations</h4>
-				<span class="texte mt-2"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, neque! </span>
+				<span class="texte mt-4"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, neque! </span>
 				<span class="flex items-center mt-2">
 					<Mail class="mr-2" />pierre.barbe@gmail.com
 				</span>
