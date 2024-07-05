@@ -1,0 +1,35 @@
+
+[
+	{
+		"title": "Linux",
+		"content": "./linux.svg"
+	},
+	{
+		"title": "Git",
+		"content": "./git.svg"
+	},
+	{
+		"title": "Node.js",
+		"content": "./nodedotjs.svg"
+	},
+	{
+		"title": "Typescript",
+		"content": "./typescript.svg"
+	},
+	{
+		"title": "PHP",
+		"content": "./php.svg"
+	},
+	{
+		"title": "Wordpress",
+		"content": "./wordpress.svg"
+	},
+	{
+		"title": "React",
+		"content": "./react.svg"
+	},
+	{
+		"title": "Tailwind CSS",
+		"content": "./tailwindcss.svg"
+	}
+]
