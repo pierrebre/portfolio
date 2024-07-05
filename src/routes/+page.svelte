@@ -1,20 +1,25 @@
 <script lang="ts">
 	import '../app.css';
+
 	import { Download, Github, Linkedin, Mail, Phone, AlignJustify, X } from 'lucide-svelte';
+
 	import { Button } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
+	import { Switch } from '$lib/components/ui/switch';
 	import * as Card from '$lib/components/ui/card';
+
 	import type { PageData } from './$types';
 	import ContactForm from './contact/contact-form.svelte';
 	export let data: PageData;
-	let isVisible = false;
 
 	import skills from '$lib/assets/data/skills.json';
 	import experiences from '$lib/assets/data/experiences.json';
+
+	let isVisible = false;
 </script>
 
 <div class="container mx-auto mt-4">
-	<nav class="flex lg:flex-row flex-col justify-between items-center">
+	<nav class="flex lg:flex-row flex-col justify-between lg:items-center items-start">
 		<div class="flex justify-between w-full lg:w-auto">
 			<p class="text-2xl font-bold">Pierre Barbé</p>
 			<Button on:click={() => (isVisible = !isVisible)} class="lg:hidden">
@@ -114,7 +119,7 @@
 <div class="container mx-auto px-4 mt-4">
 	<section id="contact" class="py-16">
 		<div class="flex lg:flex-row flex-col justify-between items-center">
-			<ContactForm {data} class="lg:basis-2/4 basis-full mt-8" />
+			<ContactForm {data} class="lg:basis-2/4 mt-8" />
 			<div class="flex flex-col text-center lg:text-left items-center lg:items-start mt-16 lg:mt-0">
 				<h4 class="text-2xl font-bold">Let's talk for more informations</h4>
 				<span class="texte mt-2"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, neque! </span>
