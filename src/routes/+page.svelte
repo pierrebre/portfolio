@@ -5,7 +5,6 @@
 
 	import { Button } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
-	import { Switch } from '$lib/components/ui/switch';
 	import * as Card from '$lib/components/ui/card';
 
 	import type { PageData } from './$types';
