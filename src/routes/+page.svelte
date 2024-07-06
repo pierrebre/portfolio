@@ -6,6 +6,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
 	import * as Card from '$lib/components/ui/card';
+	import * as Tabs from '$lib/components/ui/tabs';
 
 	import type { PageData } from './$types';
 	import ContactForm from './contact/contact-form.svelte';
@@ -13,6 +14,7 @@
 
 	import skills from '$lib/assets/data/skills.json';
 	import experiences from '$lib/assets/data/experiences.json';
+	import education from '$lib/assets/data/education.json';
 
 	let isVisible = false;
 </script>
@@ -100,17 +102,38 @@
 			<h2 class="text-center text-3xl">
 				My <span>Experience</span>
 			</h2>
-			{#each experiences as experience}
-				<Card.Root class="mt-8 border-zinc-600 bg-black text-white hover:bg-zinc-800 ease-linear duration-300">
-					<Card.Header>
-						<Card.Title>{experience.title}</Card.Title>
-						<Card.Description class="text-whiteC">{experience.description}</Card.Description>
-					</Card.Header>
-					<Card.Content>
-						<p class="text-zinc-300">{experience.content}</p>
-					</Card.Content>
-				</Card.Root>
-			{/each}
+			<Tabs.Root value="experience" class="flex flex-col items-center">
+				<Tabs.List class="mt-8">
+					<Tabs.Trigger value="experience">Professional Experience</Tabs.Trigger>
+					<Tabs.Trigger value="education">Education</Tabs.Trigger>
+				</Tabs.List>
+				<Tabs.Content value="education">
+					{#each education as education}
+						<Card.Root class="mt-8 border-zinc-600 bg-black text-white hover:bg-zinc-800 ease-linear duration-300">
+							<Card.Header>
+								<Card.Title>{education.title}</Card.Title>
+								<Card.Description class="text-whiteC">{education.description}</Card.Description>
+							</Card.Header>
+							<Card.Content>
+								<p class="text-zinc-300">{education.content}</p>
+							</Card.Content>
+						</Card.Root>
+					{/each}
+				</Tabs.Content>
+				<Tabs.Content value="experience">
+					{#each experiences as experience}
+						<Card.Root class="mt-8 border-zinc-600 bg-black text-white hover:bg-zinc-800 ease-linear duration-300">
+							<Card.Header>
+								<Card.Title>{experience.title}</Card.Title>
+								<Card.Description class="text-whiteC">{experience.description}</Card.Description>
+							</Card.Header>
+							<Card.Content>
+								<p class="text-zinc-300">{experience.content}</p>
+							</Card.Content>
+						</Card.Root>
+					{/each}
+				</Tabs.Content>
+			</Tabs.Root>
 		</section>
 	</div>
 </div>
@@ -119,7 +142,7 @@
 	<section id="contact" class="py-16">
 		<div class="flex lg:flex-row flex-col justify-between items-center">
 			<ContactForm {data} class="lg:basis-2/4 mt-8" />
-			<div class="flex flex-col text-left items-start  lg:w-auto w-[85%] mt-16 lg:mt-0"> 
+			<div class="flex flex-col text-left items-start lg:w-auto w-[85%] mt-16 lg:mt-0">
 				<h4 class="text-2xl font-bold">Let's talk for more informations</h4>
 				<span class="texte mt-4"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, neque! </span>
 				<span class="flex items-center mt-2">
