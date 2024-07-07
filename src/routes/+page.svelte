@@ -51,11 +51,18 @@
 	<section class="mt-16">
 		<div>
 			<p class="text-4xl">
-				Hello I'am<br class="lg:hidden" /> <span class="font-bold">Pierre BARBÉ.</span>
+				Hello I'am<br class="lg:hidden" />
+				<span class="font-bold text-[#0f172a]"> Pierre BARBÉ. </span>
 				<br />
-				<span class="font-bold">Web</span> Developer
+				<span class="font-bold text-[#0f172a]">Web</span> Developer
 				<br />
-				Based In <span class="font-bold">Montreal.</span>
+				Based In
+				<span class="text-[#0f172a] mx-1 font-extrabold text-4xl relative inline-block stroke-current">
+					Montreal.
+					<svg class="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+						<path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
+					</svg>
+				</span>
 			</p>
 		</div>
 		<div class="mt-8">
