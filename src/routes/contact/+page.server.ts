@@ -6,6 +6,8 @@ import { formSchema } from './schema';
 import { MailerSend, EmailParams, Sender, Recipient } from 'mailersend';
 import 'dotenv/config';
 
+let isSubmitted = false;
+
 const { API_KEY } = process.env;
 
 const mailerSend = new MailerSend({ apiKey: API_KEY });
@@ -29,24 +31,20 @@ export const actions: Actions = {
 			});
 		}
 
-		const emailParams = new EmailParams()
-			.setFrom(sender)
-			.setTo([recipients])
-			.setSubject('Contact from Portfolio')
-			.setText(`Name: ${form.data.name}	Email: ${form.data.email}
+		const emailParams = new EmailParams().setFrom(sender).setTo([recipients]).setSubject('Contact from Portfolio').setText(`Name: ${form.data.name}	Email: ${form.data.email}
       Message: ${form.data.message}`);
 
-		await mailerSend.email
-			.send(emailParams)
-			.then((response) => {
-				console.log(response);
-			})
-			.catch((error) => {
-				console.log(error);
+		try {
+			await mailerSend.email.send(emailParams);
+			return {
+				form,
+				success: true // Ajouter un indicateur de succès
+			};
+		} catch (error) {
+			console.log(error);
+			return fail(500, {
+				form
 			});
-
-		return {
-			form
-		};
+		}
 	}
 };
