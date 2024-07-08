@@ -14,7 +14,6 @@
 	});
 
 	const { form: formData, enhance } = form;
-  console.log(success);
 </script>
 
 <div class="basis-2/4 w-[85%]">
@@ -24,11 +23,11 @@
 			<span class="inline-flex px-2">Your message has been sent</span>
 		</div>
 	{/if}
-	<form method="POST" use:enhance action="/contact" class="">
+	<form method="POST" use:enhance action="/contact" name="contact">
 		<Form.Field {form} name="name">
 			<Form.Control let:attrs>
 				<Form.Label>Name</Form.Label>
-				<Input {...attrs} bind:value={$formData.name} placeholder="Your name" />
+				<Input {...attrs} bind:value={$formData.name} name="name" placeholder="Your name" autocomplete="name" />
 			</Form.Control>
 			<Form.Description>This is your public display name.</Form.Description>
 			<Form.FieldErrors />
@@ -36,7 +35,7 @@
 		<Form.Field {form} name="email">
 			<Form.Control let:attrs>
 				<Form.Label>Email</Form.Label>
-				<Input {...attrs} type="email" bind:value={$formData.email} placeholder="Your email" />
+				<Input {...attrs} type="email" bind:value={$formData.email} name="email" placeholder="Your email" autocomplete="email" />
 			</Form.Control>
 			<Form.Description>This is your public email address.</Form.Description>
 			<Form.FieldErrors />
@@ -44,11 +43,11 @@
 		<Form.Field {form} name="message">
 			<Form.Control let:attrs>
 				<Form.Label>Message</Form.Label>
-				<Textarea {...attrs} bind:value={$formData.message} placeholder="Your message" />
+				<Textarea {...attrs} bind:value={$formData.message} name="message" placeholder="Your message" />
 			</Form.Control>
 			<Form.Description>Your message to us.</Form.Description>
 			<Form.FieldErrors />
 		</Form.Field>
-		<Form.Button>Submit</Form.Button>
+		<Form.Button type="submit" name="submit">Submit</Form.Button>
 	</form>
 </div>
