@@ -19,6 +19,11 @@
 	let isVisible = false;
 </script>
 
+<svelte:head>
+	<title>Pierre Barbé - Web Developer</title>
+	<meta name="description" content="Web Developer based in Montreal, Quebec, Canada" />
+</svelte:head>
+
 <div class="container mx-auto mt-4">
 	<nav class="flex lg:flex-row flex-col justify-between lg:items-center items-start">
 		<div class="flex justify-between w-full lg:w-auto">
@@ -66,11 +71,11 @@
 			</p>
 		</div>
 		<div class="mt-8">
-			<p class="texte text-[#8e8b8c] lg:w-2/5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae.</p>
+			<p class="text-[#8e8b8c] lg:w-2/5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae.</p>
 		</div>
 		<div class="flex mt-16 items-end">
 			{#each [{ icon: 'github', link: '/' }, { icon: 'linkedin', link: '/' }] as social}
-				<a href={social.link} class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500">
+				<a href={social.link} aria-label="Follow me on {social.icon}" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500">
 					{#if social.icon === 'github'}
 						<Github class="h-5 w-5" />
 					{:else if social.icon === 'linkedin'}
@@ -94,7 +99,7 @@
 							<Card.Title>{skill.title}</Card.Title>
 						</Card.Header>
 						<Card.Content class="flex justify-center items-center">
-							<img src={skill.content} alt={skill.title} class="h-12 w-12" />
+							<img src={skill.content} alt="Logo of {skill.title}" class="h-12 w-12" />
 						</Card.Content>
 					</Card.Root>
 				</li>
@@ -112,7 +117,7 @@
 			<Tabs.Root value="experience" class="flex flex-col items-center">
 				<Tabs.List class="mt-8">
 					<Tabs.Trigger value="experience">Professional Experience</Tabs.Trigger>
-					<Tabs.Trigger value="education">Education</Tabs.Trigger>
+					<Tabs.Trigger value="education" class="text-black">Education</Tabs.Trigger>
 				</Tabs.List>
 				<Tabs.Content value="education">
 					{#each education as education}
@@ -160,7 +165,7 @@
 				</span>
 				<span class="flex mt-4">
 					{#each [{ icon: 'github', link: '/' }, { icon: 'linkedin', link: '/' }] as social}
-						<a href={social.link} class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500">
+						<a href={social.link} aria-label="Follow me on {social.icon}" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500">
 							{#if social.icon === 'github'}
 								<Github class="h-5 w-5" />
 							{:else if social.icon === 'linkedin'}
