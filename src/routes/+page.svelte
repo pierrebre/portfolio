@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 
+	import { t } from '$lib/translation';
+
 	import { Download, Github, Linkedin, Mail, Phone, AlignJustify, X } from 'lucide-svelte';
 
 	import { Button } from '$lib/components/ui/button';
@@ -20,8 +22,8 @@
 </script>
 
 <svelte:head>
-	<title>Pierre Barbé - Web Developer</title>
-	<meta name="description" content="Web Developer based in Montreal, Quebec, Canada" />
+	<title>{$t('home.pageTitle')}</title>
+	<meta name="description" content={$t('home.metaDescription')} />
 </svelte:head>
 
 <div class="container mx-auto mt-4">
@@ -37,7 +39,7 @@
 			</Button>
 		</div>
 		<ul class="flex lg:flex-row flex-col my-4 lg:my-0 {isVisible ? 'flex' : 'hidden lg:flex'}">
-			{#each ['Skills', 'Experience', 'Contact Me'] as item}
+			{#each [$t('skills.titleSection'), 'Experience', 'Contact Me'] as item}
 				<li>
 					<a class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href={`/#${item.toLowerCase().replace(' ', '-')}`}>
 						{item}
@@ -56,14 +58,15 @@
 	<section class="mt-16">
 		<div>
 			<p class="text-4xl">
-				Hello I'am<br class="lg:hidden" />
+				{$t('home.introduction.hello')}<br class="lg:hidden" />
 				<span class="font-bold text-[#0f172a]"> Pierre BARBÉ. </span>
 				<br />
-				<span class="font-bold text-[#0f172a]">Web</span> Developer
+				<span class="font-bold text-[#0f172a]">{$t('home.introduction.role')}</span>
+				{$t('home.introduction.role2')}
 				<br />
-				Based In
+				{$t('home.introduction.location1')}
 				<span class="text-[#0f172a] mx-1 font-extrabold text-4xl relative inline-block stroke-current">
-					Montreal.
+					{$t('home.introduction.location2')}
 					<svg class="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
 						<path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
 					</svg>
@@ -89,7 +92,9 @@
 
 	<section id="skills" class="mt-16 text-center">
 		<h2 class="text-3xl mb-8">
-			My <span class="font-bold">Skills</span>
+			<span class="font-bold">
+				{$t('skills.titleSection')}
+			</span>
 		</h2>
 		<ul class="grid gap-4 lg:grid-cols-5 justify-center items-center">
 			{#each skills as skill}
@@ -155,8 +160,8 @@
 		<div class="flex lg:flex-row flex-col justify-between items-center">
 			<ContactForm {data} class="lg:basis-2/4 mt-8" />
 			<div class="flex flex-col text-left items-start lg:w-auto w-[85%] mt-16 lg:mt-0">
-				<h4 class="text-2xl font-bold">Let's talk for more informations</h4>
-				<span class="texte mt-4"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. A, neque! </span>
+				<h4 class="text-2xl font-bold">{$t('home.contactTitle')}</h4>
+				<!--<span class="texte mt-4"> {$t('home.contactText')} </span>-->
 				<span class="flex items-center mt-2">
 					<Mail class="mr-2" />pierre.barbe@gmail.com
 				</span>
