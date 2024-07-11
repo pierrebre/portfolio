@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 
-	import { t, locale } from '$lib/translation';
+	import { t } from '$lib/translation';
 
 	import { Download, Github, Linkedin, Mail, Phone, AlignJustify, X } from 'lucide-svelte';
 
@@ -18,7 +18,21 @@
 	import experiences from '$lib/assets/data/experiences.json';
 	import degrees from '$lib/assets/data/degrees.json';
 
+	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+
 	let isVisible = false;
+
+	let formData;
+	let success = false;
+
+	onMount(() => {
+		const unsubscribe = page.subscribe(($page) => {
+			formData = $page.data.form;
+			success = $page.form?.success || false;
+		});
+		return () => unsubscribe();
+	});
 </script>
 
 <svelte:head>
@@ -55,9 +69,9 @@
 		</div>
 	</nav>
 
-	<section class="mt-16">
+	<section class="mt-8 lg:mt-16">
 		<div>
-			<p class="text-4xl">
+			<p class="lg:text-4xl text-3xl">
 				{$t('home.introduction.hello')}<br class="lg:hidden" />
 				<span class="font-bold text-[#0f172a]"> Pierre BARBÉ. </span>
 				<br />
@@ -65,7 +79,7 @@
 				{$t('home.introduction.role2')}
 				<br />
 				{$t('home.introduction.location1')}
-				<span class="text-[#0f172a] mx-1 font-extrabold text-4xl relative inline-block stroke-current">
+				<span class="text-[#0f172a] mx-1 font-extrabold lg:text-4xl relative inline-block stroke-current">
 					{$t('home.introduction.location2')}
 					<svg class="absolute -bottom-0.5 w-full max-h-1.5" viewBox="0 0 55 5" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
 						<path d="M0.652466 4.00002C15.8925 2.66668 48.0351 0.400018 54.6853 2.00002" stroke-width="2"></path>
@@ -160,10 +174,21 @@
 
 <div class="container mx-auto px-4 mt-4">
 	<section id="contact" class="py-16">
+		<h2 class="text-3xl text-center mb-8">
+			<span class="font-bold">
+				{$t('home.titleSection3')}
+			</span>
+		</h2>
+		{#if success}
+			<div class="inline-flex items-center my-8 bg-white leading-none text-black rounded-full p-2 shadow text-teal text-sm">
+				<span class="inline-flex bg-[#0f172a] text-white rounded-full h-6 px-3 justify-center items-center">{$t('home.formSuccess.success')}</span>
+				<span class="inline-flex px-2">{$t('home.formSuccess.message')}</span>
+			</div>
+		{/if}
 		<div class="flex lg:flex-row flex-col justify-between items-center">
 			<ContactForm {data} class="mt-8" />
 			<div class="flex flex-col text-left items-start lg:w-[35%] w-[85%] mt-16 lg:mt-0">
-				<h4 class="text-xl font-bold">{$t('home.contactTitle')}</h4>
+				<h3 class="text-xl font-bold">{$t('home.contactTitle')}</h3>
 				<!--<span class="texte mt-4"> {$t('home.contactText')} </span>-->
 				<span class="flex items-center mt-2">
 					<Mail class="mr-2" />pierre.barbe@gmail.com
