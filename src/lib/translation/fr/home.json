@@ -1,6 +1,8 @@
 {
 	"pageTitle": "Pierre Barbé - Développeur Web",
 	"metaDescription": "Développeur Web basé à Montréal, Québec, Canada",
+	"titleSection1": "Compétences",
+	"titleSection2": "Expériences",
 	"introduction": {
 		"hello": "Bonjour, je suis",
 		"role": "Développeur",
@@ -8,7 +10,30 @@
 		"location1": "Basé à",
 		"location2": "Montréal."
 	},
-	"presentation": "",
+	"presentation": "Je suis Passionné par les multiples facettes du développement, j'ai acquis un large éventail de compétences au cours de mes études et expériences professionnelles.",
+	"presentation2": "J'ai travaillé sur des projets allant de l'automatisation de la gestion mobile à la participation au développement d'un outil d'analyse utilisé par plusieurs entreprises. Diplômé en développement web et en développement fullstack, mon objectif est de transformer ma passion en une carrière réussie et de contribuer à des projets numériques innovants.",
 	"contactTitle": "Pour plus d'informations, n'hésitez pas à me contacter.",
-	"contactText": ""
+	"contactText": "",
+	"formSuccess": {
+		"success": "Succès",
+		"message": "Votre message a été envoyé"
+	},
+	"formFields": {
+		"name": {
+			"label": "Nom",
+			"placeholder": "Votre nom",
+			"description": "Ceci est votre nom d'affichage public."
+		},
+		"email": {
+			"label": "Email",
+			"placeholder": "Votre email",
+			"description": "Ceci est votre adresse email publique."
+		},
+		"message": {
+			"label": "Message",
+			"placeholder": "Votre message",
+			"description": "Votre message pour nous."
+		},
+		"submit": "Envoyer"
+	}
 }

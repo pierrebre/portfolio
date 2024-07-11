@@ -1,17 +1,27 @@
 [
 	{
-		"title": "Web Developer",
-		"description": "24/10/2021 - Present",
-		"content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae."
+		"title": "Artwai - Rennes",
+		"content": "Apprenticeship. Contributed to the development of the Millecheck tool and played a role in the development and maintenance of websites integrating DevOps principles, with a strong emphasis on writing clean code, as well as promoting the importance and awareness of WebPerformance within the company.",
+		"description": "June 2022 - June 2024"
 	},
 	{
-		"title": "Web Developer",
-		"description": "24/10/2021 - Present",
-		"content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae."
+		"title": "Agence 11h10 - Chateaugiron",
+		"content": "Internship. Creation and ongoing maintenance of the company's websites, ensuring high performance, security, and user-friendly design.",
+		"description": "March - May 2022"
 	},
 	{
-		"title": "Web Developer",
-		"description": "24/10/2021 - Present",
-		"content": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae."
+		"title": "VPCrazy - Chateaubourg",
+		"content": "Apprenticeship. Developed websites using WordPress, PHP, and JavaScript. Created custom WordPress extensions to address specific web scraping needs.",
+		"description": "August 2021 - January 2022"
+	},
+	{
+		"title": "Orange Labs – Lannion",
+		"content": "Internship. Designed and developed software firmware to automate the management of a mobile farm (Android). Developed Robot Framework integration scripts to validate the firmware. Created a Python-based REST API to capture network traffic from the mobile farm devices.",
+		"description": "January - March 2020"
+	},
+	{
+		"title": "Orange Labs – Lannion",
+		"content": "Internship. Developed a management and supervision portal for the mobile fleets of Orange's enterprise clients. Worked in an Agile (Scrum) environment. Participated in defining validation and integration strategies. Developed automated test scripts using Robot Framework and Selenium.",
+		"description": "June - July 2019"
 	}
 ]
