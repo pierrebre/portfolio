@@ -38,7 +38,7 @@ export const actions: Actions = {
 			await mailerSend.email.send(emailParams);
 			return {
 				form,
-				success: true // Ajouter un indicateur de succès
+				success: true
 			};
 		} catch (error) {
 			console.log(error);
