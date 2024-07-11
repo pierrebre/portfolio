@@ -1,11 +1,12 @@
 {
-	"pageTitle": "Pierre Barbé - Web Developer",
-	"metaDescription": "Web Developer based in Montreal, Quebec, Canada",
+	"pageTitle": "Pierre Barbé - Software Developer",
+	"metaDescription": "Software Developer based in Montreal, Quebec, Canada",
 	"titleSection1": "Skills",
 	"titleSection2": "Experiences",
+	"titleSection3": "Contact",
 	"introduction": {
 		"hello": "Hello, I'm",
-		"role": "Web",
+		"role": "Software",
 		"role2": "Developer",
 		"location1": "Based In",
 		"location2": "Montreal."
