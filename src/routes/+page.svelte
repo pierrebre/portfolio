@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 
-	import { t } from '$lib/translation';
+	import { t, locale } from '$lib/translation';
 
 	import { Download, Github, Linkedin, Mail, Phone, AlignJustify, X } from 'lucide-svelte';
 
@@ -16,7 +16,7 @@
 
 	import skills from '$lib/assets/data/skills.json';
 	import experiences from '$lib/assets/data/experiences.json';
-	import education from '$lib/assets/data/education.json';
+	import degrees from '$lib/assets/data/degrees.json';
 
 	let isVisible = false;
 </script>
@@ -39,7 +39,7 @@
 			</Button>
 		</div>
 		<ul class="flex lg:flex-row flex-col my-4 lg:my-0 {isVisible ? 'flex' : 'hidden lg:flex'}">
-			{#each [$t('skills.titleSection'), 'Experience', 'Contact Me'] as item}
+			{#each [$t('home.titleSection1'), $t('home.titleSection2'), 'Contact'] as item}
 				<li>
 					<a class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href={`/#${item.toLowerCase().replace(' ', '-')}`}>
 						{item}
@@ -73,8 +73,8 @@
 				</span>
 			</p>
 		</div>
-		<div class="mt-8">
-			<p class="text-[#8e8b8c] lg:w-2/5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam perferendis pariatur consectetur soluta, eum explicabo nesciunt nam in incidunt vitae.</p>
+		<div class="mt-12 lg:w-[45%]">
+			<p class=" text-[#8e8b8c] text-justify whitespace-pre-line break-words">{$t('home.presentation')}<br class="lg:hidden" /><br class="lg:hidden" />{$t('home.presentation2')}</p>
 		</div>
 		<div class="flex mt-16 items-end">
 			{#each [{ icon: 'github', link: '/' }, { icon: 'linkedin', link: '/' }] as social}
@@ -93,7 +93,7 @@
 	<section id="skills" class="mt-16 text-center">
 		<h2 class="text-3xl mb-8">
 			<span class="font-bold">
-				{$t('skills.titleSection')}
+				{$t('home.titleSection1')}
 			</span>
 		</h2>
 		<ul class="grid gap-4 lg:grid-cols-5 justify-center items-center">
@@ -115,29 +115,32 @@
 
 <div class="w-full bg-black text-white mt-16">
 	<div class="container mx-auto px-4">
-		<section id="experience" class="py-16">
+		<section id="experiences" class="py-16">
 			<h2 class="text-center text-3xl">
-				My <span>Experience</span>
+				<span>{$t('home.titleSection2')}</span>
 			</h2>
-			<Tabs.Root value="experience" class="flex flex-col items-center">
+			<Tabs.Root value="experiences" class="flex flex-col items-center">
 				<Tabs.List class="mt-8">
-					<Tabs.Trigger value="experience">Professional Experience</Tabs.Trigger>
-					<Tabs.Trigger value="education" class="text-black">Education</Tabs.Trigger>
+					<Tabs.Trigger value="experiences">Experiences</Tabs.Trigger>
+					<Tabs.Trigger value="degrees" class="text-black">Degrees</Tabs.Trigger>
 				</Tabs.List>
-				<Tabs.Content value="education">
-					{#each education as education}
+				<Tabs.Content value="degrees" class="w-full">
+					{#each degrees as degree}
 						<Card.Root class="mt-8 border-zinc-600 bg-black text-white hover:bg-zinc-800 ease-linear duration-300">
 							<Card.Header>
-								<Card.Title>{education.title}</Card.Title>
-								<Card.Description class="text-whiteC">{education.description}</Card.Description>
+								<Card.Title>{degree.title}</Card.Title>
+								<Card.Description class="text-whiteC">{degree.description}</Card.Description>
 							</Card.Header>
 							<Card.Content>
-								<p class="text-zinc-300">{education.content}</p>
+								<p class="text-zinc-300">{degree.content}</p>
+								{#if degree.details}
+									<p class="text-zinc-300 mt-2">{degree.details}</p>
+								{/if}
 							</Card.Content>
 						</Card.Root>
 					{/each}
 				</Tabs.Content>
-				<Tabs.Content value="experience">
+				<Tabs.Content value="experiences" class="w-full">
 					{#each experiences as experience}
 						<Card.Root class="mt-8 border-zinc-600 bg-black text-white hover:bg-zinc-800 ease-linear duration-300">
 							<Card.Header>
@@ -158,16 +161,17 @@
 <div class="container mx-auto px-4 mt-4">
 	<section id="contact" class="py-16">
 		<div class="flex lg:flex-row flex-col justify-between items-center">
-			<ContactForm {data} class="lg:basis-2/4 mt-8" />
-			<div class="flex flex-col text-left items-start lg:w-auto w-[85%] mt-16 lg:mt-0">
-				<h4 class="text-2xl font-bold">{$t('home.contactTitle')}</h4>
+			<ContactForm {data} class="mt-8" />
+			<div class="flex flex-col text-left items-start lg:w-[35%] w-[85%] mt-16 lg:mt-0">
+				<h4 class="text-xl font-bold">{$t('home.contactTitle')}</h4>
 				<!--<span class="texte mt-4"> {$t('home.contactText')} </span>-->
 				<span class="flex items-center mt-2">
 					<Mail class="mr-2" />pierre.barbe@gmail.com
 				</span>
 				<span class="flex items-center mt-2">
-					<Phone class="mr-2" />+33 (0) 1 23 45 67 89
+					<Phone class="mr-2" />+1 867-322-3874
 				</span>
+
 				<span class="flex mt-4">
 					{#each [{ icon: 'github', link: '/' }, { icon: 'linkedin', link: '/' }] as social}
 						<a href={social.link} aria-label="Follow me on {social.icon}" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500">

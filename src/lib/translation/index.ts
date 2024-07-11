@@ -14,19 +14,9 @@ export const config = {
 			loader: async () => (await import('./fr/home.json')).default
 		},
 		{
-			locale: 'fr',
-			key: 'skills',
-			loader: async () => (await import('./fr/skills.json')).default
-		},
-		{
 			locale: 'en',
 			key: 'home',
 			loader: async () => (await import('./en/home.json')).default
-		},
-		{
-			locale: 'en',
-			key: 'skills',
-			loader: async () => (await import('./en/skills.json')).default
 		}
 	]
 };

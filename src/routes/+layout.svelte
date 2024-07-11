@@ -1,12 +1,24 @@
-<script>
+<script lang="ts">
 	import { t, locales, locale } from '$lib/translation';
+	import * as Select from '$lib/components/ui/select';
+
+	function handleSelectedChange(value: any) {
+		$locale = value;
+	}
 </script>
 
-<select bind:value={$locale}>
-	{#each $locales as value}
-		<option {value}>{$t(`lang.${value}`)}</option>
-	{/each}
-</select>
-
+<!--<div class=" left-0 top-0 z-10 m-0 p-0 w-full h-full">
+	<Select.Root onSelectedChange={(v) => v && handleSelectedChange(v.value)}>
+		<Select.Trigger class="w-[120px]">
+			<Select.Value placeholder="Language" />
+		</Select.Trigger>
+		<Select.Content>
+			{#each $locales as value}
+				<Select.Item {value}>{$t(`lang.${value}`)}</Select.Item>
+			{/each}
+		</Select.Content>
+	</Select.Root>
+</div>
+-->
 
 <slot />

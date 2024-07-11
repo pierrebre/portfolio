@@ -1,6 +1,8 @@
 {
 	"pageTitle": "Pierre Barbé - Web Developer",
 	"metaDescription": "Web Developer based in Montreal, Quebec, Canada",
+	"titleSection1": "Skills",
+	"titleSection2": "Experiences",
 	"introduction": {
 		"hello": "Hello, I'm",
 		"role": "Web",
@@ -8,7 +10,30 @@
 		"location1": "Based In",
 		"location2": "Montreal."
 	},
-	"presentation": "",
+	"presentation": "Passionate about the various aspects of development, I have acquired a wide range of skills through my studies and professional experiences.",
+	"presentation2": "I have worked on projects ranging from automating mobile management to participating in the development of an analysis tool used by several companies. With a degree in web development and fullstack development, my goal is to turn my passion into a successful career and contribute to innovative digital projects.",
 	"contactTitle": "For more informations, feel free to contact me.",
-	"contactText": ""
+	"contactText": "",
+	"formSuccess": {
+		"success": "Success",
+		"message": "Your message has been sent"
+	},
+	"formFields": {
+		"name": {
+			"label": "Name",
+			"placeholder": "Your name",
+			"description": "This is your public display name."
+		},
+		"email": {
+			"label": "Email",
+			"placeholder": "Your email",
+			"description": "This is your public email address."
+		},
+		"message": {
+			"label": "Message",
+			"placeholder": "Your message",
+			"description": "Your message to us."
+		},
+		"submit": "Submit"
+	}
 }

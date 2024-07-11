@@ -1,0 +1,24 @@
+[
+    {
+        "title": "MyDigitalSchool - Rennes",
+        "content": "MBA in Fullstack Development.",
+        "details": "Manager of Digital Web Project (RNCP Level 7 Certification).",
+        "description": "2022-2024"
+    },
+    {
+        "title": "MyDigitalSchool - Rennes", 
+        "content": "Bachelor in Web Development.",
+        "details": "Application Developer Certification (RNCP Level 6 Certification).",
+        "description": "2021-2022"
+    },
+    {
+        "title": "Lycée Félix Le Dantec - Lannion",
+        "content": "Advanced Technician's Certificate in IT Services for Organizations - Software Solutions and Business Applications.",
+        "description": "2018-2020"
+    },
+    {
+        "title": "Lycée la Champagne - Vitré",
+        "content": "Professional High School Diploma in Electrotechnics.",
+        "description": "2015-2018"
+    }
+]
