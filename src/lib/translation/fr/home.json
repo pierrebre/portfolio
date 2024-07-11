@@ -1,12 +1,13 @@
 {
-	"pageTitle": "Pierre Barbé - Développeur Web",
-	"metaDescription": "Développeur Web basé à Montréal, Québec, Canada",
+	"pageTitle": "Pierre Barbé - Développeur Logiciel",
+	"metaDescription": "Développeur Logiciel basé à Montréal, Québec, Canada",
 	"titleSection1": "Compétences",
 	"titleSection2": "Expériences",
+	"titleSection3": "Contact",
 	"introduction": {
 		"hello": "Bonjour, je suis",
 		"role": "Développeur",
-		"role2": "Web",
+		"role2": "Logiciel",
 		"location1": "Basé à",
 		"location2": "Montréal."
 	},

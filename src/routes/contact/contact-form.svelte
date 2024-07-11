@@ -5,27 +5,25 @@
 	import { formSchema, type FormSchema } from './schema';
 	import { type SuperValidated, type Infer, superForm } from 'sveltekit-superforms';
 	import { zodClient } from 'sveltekit-superforms/adapters';
-	import { onMount } from 'svelte';
 	import { t } from '$lib/translation';
 
 	export let data: SuperValidated<Infer<FormSchema>>;
-	export let form: any; // Ceci vient de l'extérieur
 
 	const svelteForm = superForm(data, {
 		validators: zodClient(formSchema)
 	});
 
 	const { form: formData, enhance } = svelteForm;
+
+	let success = false;
+
+	function handleSubmit() {
+		success = false; 
+	}
 </script>
 
 <div class="basis-2/4 w-[85%]">
-	{#if form?.success}
-		<div class="inline-flex items-center my-8 bg-white leading-none text-black rounded-full p-2 shadow text-teal text-sm">
-			<span class="inline-flex bg-[#0f172a] text-white rounded-full h-6 px-3 justify-center items-center">{$t('home.formSuccess.success')}</span>
-			<span class="inline-flex px-2">{$t('formSuccess.message')}</span>
-		</div>
-	{/if}
-	<form method="POST" use:enhance action="/contact" name="contact">
+	<form method="POST" use:enhance action="/contact" name="contact" on:submit={handleSubmit}>
 		<Form.Field form={svelteForm} name="name">
 			<Form.Control let:attrs>
 				<Form.Label>{$t('home.formFields.name.label')}</Form.Label>

@@ -6,8 +6,6 @@ import { formSchema } from './schema';
 import { MailerSend, EmailParams, Sender, Recipient } from 'mailersend';
 import 'dotenv/config';
 
-let isSubmitted = false;
-
 const { API_KEY } = process.env;
 
 const mailerSend = new MailerSend({ apiKey: API_KEY });
