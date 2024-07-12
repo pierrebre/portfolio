@@ -62,8 +62,8 @@
 			{/each}
 		</ul>
 		<div class={isVisible ? 'flex' : 'hidden lg:flex'}>
-			<Button>
-				<Download class="mr-2 h-4 w-4" />
+			<Button href="./PierreBARBE_CV.pdf" download>
+				<Download class="mr-2 h-4 w-4"  />
 				Resume
 			</Button>
 		</div>
@@ -91,8 +91,8 @@
 			<p class=" text-[#8e8b8c] text-justify whitespace-pre-line break-words">{$t('home.presentation')}<br class="lg:hidden" /><br class="lg:hidden" />{$t('home.presentation2')}</p>
 		</div>
 		<div class="flex mt-16 items-end">
-			{#each [{ icon: 'github', link: '/' }, { icon: 'linkedin', link: '/' }] as social}
-				<a href={social.link} aria-label="Follow me on {social.icon}" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500">
+			{#each [{ icon: 'github', link: 'https://github.com/pierrebre' }, { icon: 'linkedin', link: 'https://www.linkedin.com/in/pierre-barb%C3%A9' }] as social}
+				<a href={social.link} target="_blank" aria-label="Follow me on {social.icon}" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500">
 					{#if social.icon === 'github'}
 						<Github class="h-5 w-5" />
 					{:else if social.icon === 'linkedin'}
@@ -180,7 +180,7 @@
 			</span>
 		</h2>
 		{#if success}
-			<div class="inline-flex items-center my-8 bg-white leading-none text-black rounded-full p-2 shadow text-teal text-sm">
+			<div class="flex items-center lg:inline-flex my-8 bg-white leading-none text-black rounded-full p-2 shadow text-teal text-sm"> 
 				<span class="inline-flex bg-[#0f172a] text-white rounded-full h-6 px-3 justify-center items-center">{$t('home.formSuccess.success')}</span>
 				<span class="inline-flex px-2">{$t('home.formSuccess.message')}</span>
 			</div>
@@ -198,8 +198,8 @@
 				</span>
 
 				<span class="flex mt-4">
-					{#each [{ icon: 'github', link: '/' }, { icon: 'linkedin', link: '/' }] as social}
-						<a href={social.link} aria-label="Follow me on {social.icon}" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500">
+					{#each [{ icon: 'github', link: 'https://github.com/pierrebre' }, { icon: 'linkedin', link: 'https://www.linkedin.com/in/pierre-barb%C3%A9' }] as social}
+						<a href={social.link} target="_blank" aria-label="Follow me on {social.icon}" class="mr-8 border-solid border-2 border-black p-3 rounded hover:bg-black hover:text-white ease-out duration-500">
 							{#if social.icon === 'github'}
 								<Github class="h-5 w-5" />
 							{:else if social.icon === 'linkedin'}
