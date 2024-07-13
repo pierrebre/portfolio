@@ -3,9 +3,8 @@
 
 	import { t } from '$lib/translation';
 
-	import { Download, Github, Linkedin, Mail, Phone, AlignJustify, X } from 'lucide-svelte';
+	import { Github, Linkedin, Mail, Phone, X } from 'lucide-svelte';
 
-	import { Button } from '$lib/components/ui/button';
 	import { Separator } from '$lib/components/ui/separator';
 	import * as Card from '$lib/components/ui/card';
 	import * as Tabs from '$lib/components/ui/tabs';
@@ -20,8 +19,6 @@
 
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
-
-	let isVisible = false;
 
 	let formData;
 	let success = false;
@@ -41,34 +38,6 @@
 </svelte:head>
 
 <div class="container mx-auto mt-4">
-	<nav class="flex lg:flex-row flex-col justify-between lg:items-center items-start">
-		<div class="flex justify-between w-full lg:w-auto">
-			<p class="text-2xl font-bold">Pierre Barbé</p>
-			<Button on:click={() => (isVisible = !isVisible)} class="lg:hidden">
-				{#if isVisible}
-					<X class="h-4 w-4" />
-				{:else}
-					<AlignJustify class="h-4 w-4" />
-				{/if}
-			</Button>
-		</div>
-		<ul class="flex lg:flex-row flex-col my-4 lg:my-0 {isVisible ? 'flex' : 'hidden lg:flex'}">
-			{#each [$t('home.titleSection1'), $t('home.titleSection2'), 'Contact'] as item}
-				<li>
-					<a class="mr-8 text-lg font-bold relative block after:block after:content-[''] after:absolute after:h-[3px] after:bg-[#0f172a] after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left" href={`/#${item.toLowerCase().replace(' ', '-')}`}>
-						{item}
-					</a>
-				</li>
-			{/each}
-		</ul>
-		<div class={isVisible ? 'flex' : 'hidden lg:flex'}>
-			<Button href="./PierreBARBE_CV.pdf" download>
-				<Download class="mr-2 h-4 w-4"  />
-				Resume
-			</Button>
-		</div>
-	</nav>
-
 	<section class="mt-8 lg:mt-16">
 		<div>
 			<p class="lg:text-4xl text-3xl">
@@ -180,7 +149,7 @@
 			</span>
 		</h2>
 		{#if success}
-			<div class="flex items-center lg:inline-flex my-8 bg-white leading-none text-black rounded-full p-2 shadow text-teal text-sm"> 
+			<div class="flex items-center lg:inline-flex my-8 bg-white leading-none text-black rounded-full p-2 shadow text-teal text-sm">
 				<span class="inline-flex bg-[#0f172a] text-white rounded-full h-6 px-3 justify-center items-center">{$t('home.formSuccess.success')}</span>
 				<span class="inline-flex px-2">{$t('home.formSuccess.message')}</span>
 			</div>
