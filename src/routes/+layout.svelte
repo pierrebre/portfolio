@@ -11,7 +11,6 @@
 		{ href: '/#skills', name: $t('home.titleSection1') },
 		{ href: '/#experiences', name: $t('home.titleSection2') },
 		{ href: '/#contact', name: 'Contact' },
-		{ href: '/blog', name: 'Blog' }
 	];
 
 	let isVisible = false;

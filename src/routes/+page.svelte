@@ -35,7 +35,7 @@
 <svelte:head>
 	<title>{$t('home.pageTitle')}</title>
 	<meta name="description" content={$t('home.metaDescription')} />
-	<meta property="og:image" content="./me.jpeg">
+	<meta property="og:image" content="" >
 	<meta property="og:site_name" content="Pierre Barbé - Portfolio">
 	<meta property="og:title" content="{$t('home.pageTitle')}">
 	<meta property="og:type" content="website">
