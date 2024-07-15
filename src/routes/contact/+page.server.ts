@@ -9,7 +9,7 @@ import 'dotenv/config';
 const { API_KEY } = process.env;
 
 const mailerSend = new MailerSend({ apiKey: API_KEY });
-const sender = new Sender('you@trial-z3m5jgrezzmldpyo.mlsender.net', 'Contact - Portfolio');
+const sender = new Sender('you@pierrebarbe.fr', 'Contact - Portfolio');
 const recipients = new Recipient('pierrebarbe0@gmail.com');
 
 export const load: PageServerLoad = async () => {
