@@ -35,6 +35,12 @@
 <svelte:head>
 	<title>{$t('home.pageTitle')}</title>
 	<meta name="description" content={$t('home.metaDescription')} />
+	<meta property="og:image" content="./me.jpeg">
+	<meta property="og:site_name" content="Pierre Barbé - Portfolio">
+	<meta property="og:title" content="{$t('home.pageTitle')}">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://pierrebarbe.fr">
+	<meta property="og:description" content="{$t('home.metaDescription')}">
 </svelte:head>
 
 <div class="container mx-auto mt-4">
