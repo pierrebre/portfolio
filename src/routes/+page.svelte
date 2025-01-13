@@ -166,7 +166,7 @@
 				<h3 class="text-xl font-bold">{$t('home.contactTitle')}</h3>
 				<!--<span class="texte mt-4"> {$t('home.contactText')} </span>-->
 				<span class="flex items-center mt-2">
-					<Mail class="mr-2" />pierre.barbe@gmail.com
+					<Mail class="mr-2" />pierrebarbe0@gmail.com
 				</span>
 				<span class="flex items-center mt-2">
 					<Phone class="mr-2" />+1 (438) 448-8408
