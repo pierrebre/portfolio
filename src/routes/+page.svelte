@@ -169,7 +169,7 @@
 					<Mail class="mr-2" />pierre.barbe@gmail.com
 				</span>
 				<span class="flex items-center mt-2">
-					<Phone class="mr-2" />+1 867-322-3874
+					<Phone class="mr-2" />+1 (438) 448-8408
 				</span>
 
 				<span class="flex mt-4">
